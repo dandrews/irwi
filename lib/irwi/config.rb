@@ -14,9 +14,9 @@ class Irwi::Config
 
   def formatter
     @formatter ||= begin
-                     require 'irwi/formatters/red_cloth'
+                     require 'irwi/formatters/wiki_cloth'
                      
-                     self.formatter = Irwi::Formatters::RedCloth.new
+                     self.formatter = Irwi::Formatters::WikiCloth.new
                    end	
   end
 
