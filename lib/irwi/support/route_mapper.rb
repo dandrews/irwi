@@ -9,9 +9,7 @@ module Irwi::Support::RouteMapper
       :root => root
     }.merge(config)
 
-    Irwi.config.system_pages.each do |page_action, page_path| # Adding routes for system pages
-      get( "#{root}/#{page_path}", opts.merge({ :action => page_action.dup }) )
-    end
+    get( "#{root}", opts.merge({ :action => 'index', :as => 'wiki_index' }) ) # Wiki root route    
 
     get( "#{root}/compare/(*path)", opts.merge({ :action => 'compare', :as => 'compare_wiki_page' }) ) # Comparing two versions of page
     get( "#{root}/new/(*path)", opts.merge({ :action => 'new', :as => 'new_wiki_page' }) ) # Wiki new route
