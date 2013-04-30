@@ -15,7 +15,7 @@ module Irwi::Extensions::Controllers::WikiPageAttachments
   protected
 
   def page_attachment_class
-    Irwi.config.page_attachment_class
+    Irwi.config.page_attachment_class = 'WikiPageAttachment'
   end
 
 end
